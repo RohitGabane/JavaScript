@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function setStyle() {
+            document.getElementById("lname").style.background = "yellow"
+        }
+        function change() {
+            document.getElementById("fname").style.color = "blue"
+        }
+    </script>
+</head>
+
+<body>
+    First name: <input type="text" onblur="change()" id="fname">
+    <br />
+    Last name: <input type="text" onfocus="setStyle()" id="lname">
+    The onfocus event occurs when an object gets focus.
+
+</body>
+
+</html>

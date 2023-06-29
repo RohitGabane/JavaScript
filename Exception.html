@@ -1,0 +1,28 @@
+<!-- Take a look at the next example, which demonstrates how this works by revising the example on the previous page:: -->
+
+<script language="JavaScript">
+    // ask for user input
+    code = prompt("Enter some JavaScript code");
+    // run the code and catch errors if any generated
+    try {
+        eval(code);
+        alert("This statememt may not get executer");
+
+    } catch (e) {
+        if (e instanceof TypeError) {
+            alert(e.message + "Variable type problem, check your variable definitions!" + e.name)
+        }
+        else if (e instanceof RangeError) {
+            alert(e.message + "Number out of range!" + e.name)
+        }
+        else if (e instanceof SyntaxError) {
+            alert(e.message + "Syntax error in code!" + e.name);
+        }
+        else {
+            alert(e.message + "An unspecified error occurred!" + e.name);
+
+        }
+    }
+    finally {
+        alert("Thank you for playing. Come back soon!");
+    }</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    #txt {
+      font-size: 48px;
+      color: #333;
+      text-align: center;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function startTime() {
+      var today = new Date();
+      var h = today.getHours();
+      var m = today.getMinutes();
+      var s = today.getSeconds();
+
+      // add a zero in front of numbers<10
+      m = checkTime(m);
+      s = checkTime(s);
+      h = checkTime(h);
+
+      document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+
+      t = setTimeout('startTime()', 500); // 500 milliseconds
+    }
+
+    function checkTime(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+  </script>
+</head>
+
+<body onload="startTime()">
+  <div id="txt"></div>
+</body>
+
+</html>

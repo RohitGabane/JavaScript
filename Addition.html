@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <script>
+        function dotask(operation)
+        {
+            letn1 = document.getElementById("n1")
+            letn2 = document.getElementById("n2")
+            letn3 = document.getElementById("n3")
+            //+beforestringconvertstringtonumber
+            if (operation == "+") {
+                n3.value = +n1.value+ +n2.value
+            }
+
+            else if(operation == "*")
+            n3.value = n1.value * n2.value
+        }
+        function validate(a, sid)
+        {
+            alert("hh")
+            //letn1=document.getElementById("n1")
+            lets1 = document.getElementById(sid)
+            if (a.value.length == 0 || a.value == "")
+                s1.innerHTML = "Textfield cannot be blank"
+            if (isNaN(a.value))
+                s1.innerHTML = "only number value allowed"
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="n1" onchange="validate(this,'err1')" />
+        <span id="err1"></span>
+            <input type="text"id="n2"onchange="validate(this,'err2')" />
+            <span id="err2"></span>
+                <input type="radio" name="r1" value="+" onchange="dotask(this.value)"/>+
+                <input type="radio" name="r1" value="*" onchange="dotask(this.value)"/>*
+                <input type="number"id="n3" disabled />
+    </form>
+</body>
+
+</html>

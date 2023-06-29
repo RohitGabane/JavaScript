@@ -1,0 +1,20 @@
+<html><body>
+    <script type="text/javascript">
+    function noNumbers(e)
+    {
+    var keynum
+    var keychar
+    var numcheck
+    keynum = e.keyCode
+    keychar = String.fromCharCode(keynum)
+    alert(keychar)
+    numcheck = /\d/
+    return !numcheck.test(keychar)
+    }
+    </script>
+    <form>
+    <input type="text" onkeypress="return noNumbers(event)" />
+    <input type="text" onkeydown="return false" />
+    </form></body>
+    </html> 
+    
