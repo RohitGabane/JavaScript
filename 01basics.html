@@ -1,0 +1,12 @@
+<script>
+    let promise = new Promise(function (resolve, reject) {
+        // the function is executed automatically when the promise is constructed
+        // after 1 second signal that the job is done with the result "done"
+
+        console.log(resolve)
+        setTimeout(() => resolve("done"), 1000);
+    });
+    promise.then(result => alert(result))
+    document.write("hello")
+    console.log(promise)
+</script>

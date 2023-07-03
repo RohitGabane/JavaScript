@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Store and retrieve data from local storage.</h2>
+    <p id="demo"></p>
+    <button onclick="go()" >set Json String</button>  
+    <!-- Set the data at local storage just like cookie in java  -->
+
+    <button onclick="getdata()">Get Object</button>
+
+    <script>
+        var myObj, myJSON, text, obj;
+
+        function go() {
+
+            // Storing data:
+            myObj = { name: "John", age: 31, city: "New York" };
+
+            myJSON = JSON.stringify(myObj);
+            localStorage.setItem("testJSON", myJSON);
+        }
+
+        function getdata() {// Retrieving data:
+            text = localStorage.getItem("testJSON");
+
+            obj = JSON.parse(text);
+
+            document.getElementById("demo").innerHTML = obj.name + " " + obj.age;
+        }
+    </script>
+</body>
+
+</html>

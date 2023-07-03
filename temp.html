@@ -1,0 +1,40 @@
+<script>
+    fetchdata= async function(){
+    let  response  =  await  fetch('ejson.json');
+    if  (response.ok)  {  //  if  HTTP-status  is  200-299
+    //  get  the  response  body  (the  method  explained  below)
+     alert(response.headers.get('Content-Type')); // application/json; charset=utf-8
+      
+      // iterate over all headers
+      for (let [key, value] of response.headers) {
+        console.log(`${key} = ${value}`);
+      }
+      for (let obj of response.headers) {
+        console.log(`${obj}`);
+      }
+    let  json  =  await  response.json();
+    let fd="";
+        console.log(json)
+          for(let x of json)
+          {console.log(x)
+              for(let b in x)
+              {console.log(x[b])
+            fd+=x[b]+"<br/>"
+          }
+          fd+="<hr/>";
+          }
+    document.getElementById('p').innerHTML=fd;
+    console.log(response.headers);
+    
+        }  
+        
+        
+        else  {
+            alert("HTTP-Error:  "  +  response.status);
+            
+            }
+            }
+    fetchdata();
+    </script>
+    <p id="p"></p>
+    
